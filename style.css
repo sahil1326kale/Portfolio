@@ -46,32 +46,75 @@ header {
   top: 0;
   z-index: 1000;
 }
-nav {
+/* Navbar Styles */
+.navbar {
+  background: #e0e9f2;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  flex-wrap: wrap;
+  padding: 1rem 2rem;
+  position: sticky;
+  top: 0;
+  z-index: 999;
 }
-nav .logo {
-  font-weight: bold;
+.navbar .logo {
   font-size: 1.5rem;
+  font-weight: bold;
   color: #007bff;
 }
-nav ul {
-  list-style: none;
+.navbar ul {
   display: flex;
-  flex-wrap: wrap;
+  list-style: none;
   gap: 1rem;
 }
-nav ul li a {
+.navbar ul li a {
   text-decoration: none;
-  color: #111;
   font-weight: 500;
-  transition: 0.3s;
+  color: #111;
 }
-nav ul li a:hover {
-  color: #007bff;
+#darkToggle {
+  background: none;
+  border: none;
+  font-size: 1.2rem;
+  cursor: pointer;
 }
+
+/* Hamburger */
+.hamburger {
+  display: none;
+  font-size: 1.8rem;
+  cursor: pointer;
+}
+
+/* Mobile Navbar */
+@media (max-width: 768px) {
+  .navbar ul {
+    position: absolute;
+    top: 65px;
+    left: 0;
+    right: 0;
+    background: #e0e9f2;
+    flex-direction: column;
+    align-items: center;
+    display: none;
+  }
+
+  .navbar ul li {
+    padding: 1rem;
+    border-bottom: 1px solid #ccc;
+    width: 100%;
+    text-align: center;
+  }
+
+  .navbar ul.show {
+    display: flex;
+  }
+
+  .hamburger {
+    display: block;
+  }
+}
+
 #darkToggle {
   background: none;
   border: none;
